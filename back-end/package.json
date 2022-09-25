@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "dotenv -e .env.test prisma migrate dev && dotenv -e .env.test cross-env jest --no-cache",
+    "test": "dotenv -e .env.test cross-env jest --no-cache",
     "build": "tsc && npx prisma migrate deploy && npx prisma db seed",
     "dev": "nodemon src/server.ts",
     "start": "ts-node src/server.ts"
