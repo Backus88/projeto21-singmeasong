@@ -25,4 +25,16 @@ describe('create recommendation', () => {
     cy.get("[data-cy=title]").should("contain", newRecommendation.name);
     cy.get("[data-cy=video]").should("be.visible");
   })
+  it('should not create a new recommendation', () => {
+    cy.visit(`${url}`);
+    cy.get("[data-cy=name]").type(newRecommendation.name);
+    cy.get("[data-cy=link]").type(faker.internet.url());
+    cy.intercept('POST',"/recommendations").as("postRecommendation");
+    cy.intercept('GET',"/recommendations").as("getRecommendation");
+
+    cy.get("[data-cy=button]").click();
+    cy.wait("@postRecommendation");
+    cy.wait("@getRecommendation");
+    cy.get("[data-cy=title]").should("not.exist")
+  })
 })
