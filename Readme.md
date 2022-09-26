@@ -46,11 +46,19 @@ Depois, dentro da pasta back-end e front-end, rode o seguinte comando para insta
 ```
 npm install
 ```
-Depois, fazer as migrações usando o prisma tanto para o banco como para o banco de teste, apenas trocar o nome do banco, no .env, na hora de fazer a migration.
+Depois, fazer as migrações usando o prisma para o banco de testes.
+
+```
+dotenv -e .env.test npx prisma migrate dev 
+```
+
+Depois, fazer as migrações usando o prisma tanto para o banco de produção. 
 
 ```
 npx prisma migrate dev 
 ```
+:stop_sign: Caso a migração do banco de dados de teste não funcione, troque o nome do banco de dados para o de teste no .env e rode a migração novamente.
+
 
 Para rodar os testes de integração e testes unitários rode o comando abaixo dentro da pasta back-end.
 
