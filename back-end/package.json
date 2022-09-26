@@ -7,9 +7,9 @@
   "scripts": {
     "test": "dotenv -e .env.test -- jest -i",
     "integration": "dotenv -e .env.test -- jest --testPathPattern=integration  -i",
-    "unit":"dotenv -e .env.test -- jest --testPathPattern=unit --coverage -i",
+    "unit": "dotenv -e .env.test -- jest --testPathPattern=unit --coverage -i",
     "build": "tsc && npx prisma migrate deploy && npx prisma db seed",
-    "dev": "nodemon src/server.ts",
+    "dev": "dotenv -e .env.test nodemon src/server.ts",
     "start": "ts-node src/server.ts"
   },
   "keywords": [],
