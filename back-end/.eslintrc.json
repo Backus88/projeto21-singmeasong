@@ -30,5 +30,6 @@
         ],
         "no-useless-escape":"off",
         "no-multiple-empty-lines":["error", {"max":1}]
+        // "max-len":["error", {"tabWidth":4}]
     }
 }

@@ -5,7 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "dotenv -e .env.test cross-env jest --no-cache",
+    "test": "dotenv -e .env.test -- jest -i",
+    "integration": "dotenv -e .env.test -- jest --testPathPattern=integration  -i",
+    "unit":"dotenv -e .env.test -- jest --testPathPattern=unit --coverage -i",
     "build": "tsc && npx prisma migrate deploy && npx prisma db seed",
     "dev": "nodemon src/server.ts",
     "start": "ts-node src/server.ts"
@@ -35,6 +37,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "^7.5.0",
+    "@jest/globals": "^29.0.3",
     "@prisma/client": "^4.3.1",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
