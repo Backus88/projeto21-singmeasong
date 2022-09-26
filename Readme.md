@@ -83,4 +83,4 @@ npx cypress open
 
 Dentro do cypress existem três rotas para serem testadas!!
 
-:stop_sign: Não esqueça de repetir os passos acima com o [repositório](https://github.com/luanalessa/projeto-frontend.git) que contem a interface da aplicação, para testar o projeto por completo.
+:stop_sign: Não esqueça de deixa o server ligado e configurar as variáveis de ambiente.
